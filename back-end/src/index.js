@@ -26,21 +26,7 @@ const server = new ApolloServer({
   },
 });
 
-server.listen().then(({ url }) => console.log(`Server is running on ${url}`));
-// const server = new ApolloServer({
-//   typeDefs: fs.readFileSync(path.join(__dirname, "schema.graphql"), "utf8"),
-//   resolvers,
-//   context: ({ req }) => {
-//     return {
-//       ...req,
-//       prisma,
-//       userId: req && req.headers.authorization ? getUserId(req) : null,
-//     };
-//   },
-// });
 // server.listen().then(({ url }) => console.log(`Server is running on ${url}`));
-// var corsOptions = {
-//   origin: "http://localhost:3000",
-//   credentials: true, // <-- REQUIRED backend setting
-// };
-// server.use(cors(corsOptions));
+server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
+  console.log(`🚀 Server ready at ${url}`);
+});
