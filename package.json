@@ -2,11 +2,11 @@
   "name": "stagewood",
   "version": "1.0.0",
   "description": "",
-  "main": "./backend/src/index.js",
+  "main": "./back-end/src/index.js",
 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm install ./backend && node ./backend/src/index.js"
+    "start": "npm install ./back-end && node ./back-end/src/index.js"
   },
   "repository": {
     "type": "git",
