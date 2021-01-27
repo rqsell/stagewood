@@ -15,6 +15,8 @@ const resolvers = {
 const server = new ApolloServer({
   typeDefs: fs.readFileSync(path.join(__dirname, "schema.graphql"), "utf8"),
   resolvers,
+  introspection: true,
+  playground: true,
   context: ({ req }) => {
     // console.log(userId);
     // console.log("connect");
@@ -26,7 +28,7 @@ const server = new ApolloServer({
   },
 });
 
-// server.listen().then(({ url }) => console.log(`Server is running on ${url}`));
-server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
-});
+server.listen().then(({ url }) => console.log(`Server is running on ${url}`));
+// server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
+//   console.log(`🚀 Server CAT ready at ${url}`);
+// });
