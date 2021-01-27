@@ -16,7 +16,8 @@ const server = new ApolloServer({
   typeDefs: fs.readFileSync(path.join(__dirname, "schema.graphql"), "utf8"),
   resolvers,
   context: ({ req }) => {
-    console.log(req.headers, "panda");
+    // console.log(userId);
+    // console.log("connect");
     return {
       ...req,
       prisma,

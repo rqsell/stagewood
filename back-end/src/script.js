@@ -11,7 +11,10 @@ async function main() {
 
   // enable cors
   var corsOptions = {
-    origin: "http://localhost:3000",
+    origin: [
+      "http://localhost:3000",
+      "https://frozen-eyrie-94018.herokuapp.com/",
+    ],
     credentials: true, // <-- REQUIRED backend setting
   };
   server.use(cors(corsOptions));
